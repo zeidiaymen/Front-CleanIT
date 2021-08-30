@@ -20,7 +20,7 @@ const TasksProgress = () => {
     var total = 0;
     var dos = 0;
 
-    const data = await fetch("http://localhost:3000/mont/get");
+    const data = await fetch("https://appcleanit.herokuapp.com/mont/get");
     const p = await data.json();
 
     for (let i = 0; i < p.length; i++) {

@@ -68,7 +68,7 @@ const IAsignin = () => {
     return Promise.all(
       users?.map(async (user) => {
         const imgSrc =
-          "http://localhost:3000/user/Uploads/" + user.img;
+          "https://appcleanit.herokuapp.com/user/Uploads/" + user.img;
         const img = await faceapi.fetchImage(imgSrc);
         var descrptions = [];
         const results = await faceapi

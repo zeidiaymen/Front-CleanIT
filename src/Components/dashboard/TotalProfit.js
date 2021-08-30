@@ -15,7 +15,7 @@ const TotalProfit = () => {
   const [tot, setTot] = useState(0);
   const [dn, setDn] = useState(0);
   useEffect(async () => {
-    const data = await fetch("http://localhost:3000/claim/get");
+    const data = await fetch("https://appcleanit.herokuapp.com/claim/get");
     const p = await data.json();
     console.log(p);
     var totale = 0;
