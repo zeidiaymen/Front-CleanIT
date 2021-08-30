@@ -16,6 +16,8 @@ export const Nav = styled.nav`
 
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
+    width: 100%;
+    margin-right: 20px;
   }
 `;
 export const Services = styled(motion.div)`
@@ -50,6 +52,9 @@ export const Grid = styled.div`
   grid-template-columns: auto auto auto;
   grid-gap: 30px;
   padding: 30px;
+  @media screen and (max-width: 960px) {
+    width: 400px;
+  }
 `;
 export const NavContainer = styled.div`
   display: flex;
@@ -118,8 +123,8 @@ export const NavMenu = styled.div`
   text-align: center;
   margin-right: -22px;
 
-  @media screen and (device-width: 320px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-    margin-right: 0px;
+  @media screen and (max-width: 720px) and {
+    margin-right: 100%;
   }
 `;
 
@@ -139,5 +144,9 @@ export const NavLinks = styled.a`
   cursor: pointer;
   &.active {
     color: #000000;
+  }
+  @media screen and (max-width: 960px) {
+    font-size: 15px;
+    width: 100%;
   }
 `;

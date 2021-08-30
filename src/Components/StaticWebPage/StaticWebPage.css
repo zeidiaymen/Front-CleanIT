@@ -11,7 +11,16 @@
 #product ul li {
   list-style: none;
 }
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #202020;
+}
 #Doc {
   /* The image used */
   background-image: url("https://www.cleanmachine.com.au/wp-content/uploads/slide_17-1024x404.jpg");
@@ -28,7 +37,19 @@
 
   background-size: cover;
 }
-
+.btn-xlarge {
+  padding: 18px 28px;
+  font-size: 18px;
+  line-height: normal;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
 #section {
   width: 100%;
   display: inline-block;
@@ -106,7 +127,18 @@
     height: auto;
     border: none;
   }
+  .k{
+    grid-template-columns: 0em !important;
+  }
+  .srv {
+    width: 50px;
+  }
+  .Est {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
+
 .footer-distributed .footer-links a {
   display: inline-block;
   line-height: 1.8;

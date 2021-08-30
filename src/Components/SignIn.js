@@ -18,7 +18,6 @@ import Container from "@material-ui/core/Container";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { queryServerApi } from "./utils/queryServerApi";
-import Voice from "./chatBotOptimezed/ChatBotMain";
 import { isMobile, isBrowser, isTablet } from "react-device-detect";
 import "../App.css";
 import "./StaticWebPage/StaticWebPage.css";
@@ -351,7 +350,7 @@ function SignIn() {
                 </div>
               )}
             </div>
-            <Voice />
+        
             <Box mt={8}>
               <Copyright />
             </Box>

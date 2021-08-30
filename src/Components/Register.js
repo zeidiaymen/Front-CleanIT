@@ -12,7 +12,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useFormik } from "formik";
 import { queryServerApi } from "./utils/queryServerApi";
-import Voice from "./chatBotOptimezed/ChatBotMain";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 import "./StaticWebPage/StaticWebPage.css";
@@ -256,7 +255,6 @@ export default function Register() {
             </Grid>
           </form>
         </div>
-        <Voice />{" "}
         <Box mt={5}>
           <Copyright />
         </Box>

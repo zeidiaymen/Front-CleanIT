@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import ChatBot from "react-chatbot-kit";
 import { Lines } from "react-preloaders";
 import img from "../utils/1.gif";
+import "../chatBotOptimezed/mainChatBot.css";
+import { useHistory } from "react-router-dom";
+
 import {
   Nav,
   NavContainer,
@@ -24,9 +27,46 @@ import {
 import "../../App.css";
 import US from "./about";
 import OUR from "./Ourteam";
-import { useHistory } from "react-router-dom";
 const Navbar = () => {
+  const SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+  const recognition = new SpeechRecognition();
   const History = useHistory();
+  const rec = async () => {
+    recognition.start();
+    console.log("Activated");
+    recognition.onresult = (e) => {
+      let resultIndex = e.resultIndex;
+      const transcript = e.results[resultIndex][0].transcript;
+      console.log(transcript);
+      const speech = new SpeechSynthesisUtterance();
+      if (transcript.includes("sign in")) {
+        speech.text = "redirected to Sign in";
+        window.speechSynthesis.speak(speech);
+        History.push("/Signin");
+      }
+      if (transcript.includes("team")) {
+        speech.text =
+          "the team is composid of 4 devellopers : Aymen  and arij full stack web developpers , samar and khalil two mobile developper";
+        window.speechSynthesis.speak(speech);
+      }
+      if (transcript.includes("sign up")) {
+        speech.text = "redirected to Sign up";
+        window.speechSynthesis.speak(speech);
+        History.push("/Register");
+      }
+      if (transcript.includes("face")) {
+        const IA = true;
+        localStorage.setItem("IA", IA);
+        console.log("done");
+      }
+      if (transcript.includes("phone number")) {
+        speech.text = "54617693";
+        window.speechSynthesis.speak(speech);
+      }
+    };
+  };
+
   const [colorChange, setColorchange] = useState(false);
 
   const changeNavbarColor = () => {
@@ -141,30 +181,35 @@ const Navbar = () => {
                 </h1>
                 <h2 Style="color:white; letter-spacing : 3px ;  ; align-item:center;text-align:center; margin-left:auto;margin-right:auto">
                   We want to hear from you{" "}
-                  <span>
-                    {" "}
-                    <Main />
-                  </span>
                 </h2>
               </div>
             </center>
+            <div className="input-group Est" Style="margin-left:43%">
+              <center>
+                <br />
+                <br />
+                <button
+                  type="button"
+                  className="btn btn-danger btn-outline btn-xlarge"
+                  onClick={() => History.push("/Register")}
+                  Style="  border-top-left-radius:20%;  border-left:none;  border-bottom-left-radius:20% ; margin-left:auto;margin-right:auto;"
+                >
+                  Get started
+                </button>
+                <button
+                  onClick={rec}
+                  type="button"
+                  class="btn btn-danger btn-outline btn-xlarge"
+                  Style="  border-top-right-radius:50%;  border-left:none;  border-bottom-right-radius:50% ; margin-left:auto;margin-right:auto;
 
-            <center>
-              <div Style="display :grid;justify-content:center;margin-top:100px  ">
-                <div>
-                  <button
-                    type="button"
-                    className="btn btn-danger btn-lg"
-                    onClick={() => History.push("/Register")}
-                  >
-                    Get started
-                  </button>
-                </div>
-                <div></div>
-              </div>
-            </center>
+"
+                >
+                  {" "}
+                  <i class="fa fa-microphone" aria-hidden="true"></i>
+                </button>
+              </center>
+            </div>
           </div>
-
           <br />
 
           <div Style="position: fixed; bottom: 0; right: 0;  ">
@@ -196,11 +241,17 @@ const Navbar = () => {
                   <Grid>
                     <div className="s" Style="padding:25px">
                       <img
+                        className="srv"
                         src="https://www.cleaningservices.tn/wp-content/uploads/2017/11/disponibilit%C3%A9.png"
                         Style="max-width:200px"
                       />
-                      <h5 Style="font-weight:bold">Disponibility</h5>
-                      <figcaption Style="max-width:200px; font-weight:bold;">
+                      <h5 Style="font-weight:bold" className="srv">
+                        Disponibility
+                      </h5>
+                      <figcaption
+                        Style="max-width:200px; font-weight:bold;"
+                        className="srv"
+                      >
                         {" "}
                         flexible service , 7/7 , 24/24
                       </figcaption>
@@ -208,25 +259,46 @@ const Navbar = () => {
 
                     <div className="s" Style="max-width :250px;padding:25px">
                       <img
+                        className="srv"
                         src="https://www.cleaningservices.tn/wp-content/uploads/2017/11/prof.png"
                         Style="max-width:200px;"
                       />
-                      <h5 Style="font-weight:bold">Professional team</h5>
-                      <figcaption Style="max-width:200px ; font-weight:bold;">
+                      <h5
+                        className="srv"
+                        Style="font-weight:bold"
+                        className="srv"
+                      >
+                        Professional team
+                      </h5>
+                      <figcaption
+                        className="srv"
+                        Style="max-width:200px ; font-weight:bold;"
+                      >
                         {" "}
                         A complete job and qualified professionals
                       </figcaption>
                     </div>
 
-                    <div className="s" Style="max-width :250px;padding:25px">
+                    <div
+                      className="s"
+                      Style="max-width :250px;padding:25px"
+                      className="srv"
+                    >
                       <img
+                        className="srv"
                         src="https://www.cleaningservices.tn/wp-content/uploads/2017/11/garantie-1.jpg"
                         Style="max-width:200px; max-height : 150px"
                       />
-                      <h5 Style="font-weight:bold;margin-top:-5px">
+                      <h5
+                        className="srv"
+                        Style="font-weight:bold;margin-top:-5px"
+                      >
                         Garantee results
                       </h5>
-                      <figcaption Style="max-width:200px ; font-weight:bold;">
+                      <figcaption
+                        className="srv"
+                        Style="max-width:200px ; font-weight:bold;"
+                      >
                         {" "}
                         Interventions carried out according to the rules of the
                         trade
@@ -306,8 +378,7 @@ const Navbar = () => {
           <br />
           <br />
           <div
-            className="container"
-            id="product"
+            className="container k"
             Style="display:grid ; grid-template-columns: 1fr 1fr ; gap: 6em;
 
         "
@@ -495,10 +566,6 @@ const Navbar = () => {
 
                 <br />
                 <br />
-
-                <p className="footer-company-name" Style="color:white">
-                  ODC © 2021
-                </p>
               </div>
 
               <div className="footer-center">
