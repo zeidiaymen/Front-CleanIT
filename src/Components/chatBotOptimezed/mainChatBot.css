@@ -32,11 +32,9 @@
 
 #mic {
   background: #ff3b3b;
-  padding: 15px;
-  border-radius: 50%;
-  position: fixed;
-  left: 20px;
-  bottom: 20px;
+  padding: 3px;
+  border-radius: 100%;
+
   border: none;
   color: #fff;
   cursor: pointer;

@@ -43,7 +43,7 @@ export default function Main() {
 
   return (
     <div>
-      <button id="mic" onClick={rec} Style="right:0">
+      <button id="mic" onClick={rec}>
         <i className="flaticon-microphone fa-xs" />
       </button>
     </div>

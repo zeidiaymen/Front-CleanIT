@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 export const Nav = styled.nav`
   background: transparent;
   height: 80px;
+  background-color: #202020;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,18 +47,20 @@ export const Team = styled(motion.div)`
 `;
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  padding: 10px;
+  grid-template-columns: auto auto auto;
+  grid-gap: 30px;
+  padding: 30px;
 `;
 export const NavContainer = styled.div`
   display: flex;
   justify-content: space-between;
   height: 80px;
+
   z-index: 1;
   width: 100%;
   padding: 0 24px;
   max-width: 1100px;
+
   @media screen and (max-width: 320) {
     padding: 0 0 px;
   }
@@ -69,15 +72,20 @@ export const ImgCaroussel = styled.img`
   overflow: hidden;
 `;
 export const Heros = styled.div`
-background-image = url ('https://www.cleanlink.com/resources/editorial/2017/easy-shopping-20806.jpg');
-max-height : 400px;
-width : 100%;
+  background-image: url
+    (
+      "https://ded7t1cra1lh5.cloudfront.net/media/547879/ce6b0585f7f9cfcfac49adb343ac6bc6b02b3b33/original/hero-window-cleaning-001.jpg?1581103019"
+    );
+  max-height: 400px;
+  width: 100%;
 `;
 
 export const NavLogo = styled.a`
-  color: green;
+  color: white;
   justify-self: flex-start;
   cursor: pointer;
+  font-size: 35px;
+  letter-spacing: 6px;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -120,8 +128,10 @@ export const NavItem = styled.li`
 `;
 
 export const NavLinks = styled.a`
-  color: #808080;
+  color: white;
   display: flex;
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;

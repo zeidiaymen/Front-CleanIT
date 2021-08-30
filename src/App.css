@@ -3,7 +3,7 @@
 }
 
 .navbar.colorChange {
-  background-color: #000;
+  background-color: #202020;
   color: white;
 }
 .navbar.colorChange NavLinks {
@@ -16,3 +16,6 @@
   }
 }
 @import url("https://cdn.syncfusion.com/ej2/material.css");
+body {
+  font-family: "Times New Roman", Times, serif;
+}

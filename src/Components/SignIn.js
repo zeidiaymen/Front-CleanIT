@@ -20,6 +20,18 @@ import { useHistory } from "react-router-dom";
 import { queryServerApi } from "./utils/queryServerApi";
 import Voice from "./chatBotOptimezed/ChatBotMain";
 import { isMobile, isBrowser, isTablet } from "react-device-detect";
+import "../App.css";
+import "./StaticWebPage/StaticWebPage.css";
+
+import {
+  Nav,
+  NavContainer,
+  NavLogo,
+  NavItem,
+  NavLinks,
+  NavMenu,
+  MobileIcon,
+} from "./StaticWebPage/StaticWebPageStyles";
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -54,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SignIn() {
+  const [colorChange, setColorchange] = useState(false);
   const test = localStorage.getItem("IA");
   const [bool, setBool] = useState(true);
 
@@ -193,127 +206,157 @@ function SignIn() {
           <img Style="width:40%;height : 40% ; margin-top : 150px" src={img} />
         </center>
       ) : (
-        <Container component="main" maxWidth="xs">
-          <CssBaseline />
-          <div className={classes.paper}>
-            <Avatar className={classes.avatar}>
-              <LockOutlinedIcon />
-            </Avatar>
+        <div>
+          <Nav
+            id="nav"
+            className={colorChange ? "navbar colorChange" : "navbar"}
+          >
+            <NavContainer>
+              <NavLogo href="/home">CleanIT</NavLogo>
+              <MobileIcon></MobileIcon>
+              <NavMenu>
+                <NavItem>
+                  <NavLinks href="#serv">Services</NavLinks>
+                </NavItem>
+                <NavItem>
+                  <NavLinks href="#about">About Us</NavLinks>
+                </NavItem>
+                <NavItem>
+                  <NavLinks href="#Team">Team</NavLinks>
+                </NavItem>
+                <NavItem>
+                  <NavLinks href="#footer">Contact</NavLinks>
+                </NavItem>
+                <NavItem>
+                  <NavLinks href="SignIn">
+                    <i className="fa fa-user" aria-hidden="true"></i>
+                  </NavLinks>
+                </NavItem>
+              </NavMenu>
+            </NavContainer>
+          </Nav>
+          <Container component="main" maxWidth="xs">
+            <CssBaseline />
+            <div className={classes.paper}>
+              <Avatar className={classes.avatar}>
+                <LockOutlinedIcon />
+              </Avatar>
 
-            <Typography component="h1" variant="h5">
-              Sign in
-            </Typography>
-            {Fpassword ? (
-              Face ? (
-                <IA />
+              <Typography component="h1" variant="h5">
+                Sign in
+              </Typography>
+              {Fpassword ? (
+                Face ? (
+                  <IA />
+                ) : (
+                  <form className={classes.form} noValidate>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="email"
+                      label="Email Address"
+                      name="email"
+                      autoComplete="email"
+                      autoFocus
+                      onChange={emailControl}
+                    />
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      name="password"
+                      label="Password"
+                      type="password"
+                      id="password"
+                      autoComplete="current-password"
+                      onChange={passwordControl}
+                    />
+                    <FormControlLabel
+                      control={<Checkbox value="remember" color="primary" />}
+                      label="Remember me"
+                    />
+                    <Button
+                      type="submit"
+                      fullWidth
+                      variant="contained"
+                      color="primary"
+                      className={classes.submit}
+                      onClick={sub}
+                    >
+                      Sign In
+                    </Button>
+                    <center>
+                      <br />
+                      <p>
+                        {" "}
+                        Sign in with{" "}
+                        <button
+                          type="button"
+                          className="btn btn-outline-primary btn-large"
+                          onClick={startIA}
+                        >
+                          <i className="fa fa-camera "> Face recognition</i>
+                        </button>
+                      </p>
+                    </center>
+                    <br />
+
+                    <Grid container>
+                      <Grid item xs>
+                        <Link
+                          href="#"
+                          variant="body2"
+                          onClick={() => {
+                            setFpassword(false);
+                            console.log(Fpassword);
+                          }}
+                        >
+                          Forgot password?
+                        </Link>
+                      </Grid>
+                      <Grid item>
+                        <Link href="Register" variant="body2">
+                          {"Don't have an account? Sign Up"}
+                        </Link>
+                      </Grid>
+                    </Grid>
+                  </form>
+                )
               ) : (
-                <form className={classes.form} noValidate>
+                <div>
                   <TextField
                     variant="outlined"
                     margin="normal"
                     required
                     fullWidth
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    autoComplete="email"
-                    autoFocus
-                    onChange={emailControl}
-                  />
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    name="password"
-                    label="Password"
-                    type="password"
-                    id="password"
-                    autoComplete="current-password"
-                    onChange={passwordControl}
-                  />
-                  <FormControlLabel
-                    control={<Checkbox value="remember" color="primary" />}
-                    label="Remember me"
+                    name="Femail"
+                    label="Email"
+                    type="email"
+                    id="Femail"
+                    autoComplete="current-Femail"
+                    onChange={(event) => setFemail(event.target.value)}
                   />
                   <Button
                     type="submit"
                     fullWidth
                     variant="contained"
                     color="primary"
-                    className={classes.submit}
-                    onClick={sub}
+                    onClick={sendEmail}
                   >
-                    Sign In
+                    Send email
                   </Button>
-                  <center>
-                    <br />
-                    <p>
-                      {" "}
-                      Sign in with{" "}
-                      <button
-                        type="button"
-                        className="btn btn-outline-primary btn-large"
-                        onClick={startIA}
-                      >
-                        <i className="fa fa-camera "> Face recognition</i>
-                      </button>
-                    </p>
-                  </center>
-                  <br />
-
-                  <Grid container>
-                    <Grid item xs>
-                      <Link
-                        href="#"
-                        variant="body2"
-                        onClick={() => {
-                          setFpassword(false);
-                          console.log(Fpassword);
-                        }}
-                      >
-                        Forgot password?
-                      </Link>
-                    </Grid>
-                    <Grid item>
-                      <Link href="Register" variant="body2">
-                        {"Don't have an account? Sign Up"}
-                      </Link>
-                    </Grid>
-                  </Grid>
-                </form>
-              )
-            ) : (
-              <div>
-                <TextField
-                  variant="outlined"
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="Femail"
-                  label="Email"
-                  type="email"
-                  id="Femail"
-                  autoComplete="current-Femail"
-                  onChange={(event) => setFemail(event.target.value)}
-                />
-                <Button
-                  type="submit"
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                  onClick={sendEmail}
-                >
-                  Send email
-                </Button>
-              </div>
-            )}
-          </div>
-          <Voice />
-          <Box mt={8}>
-            <Copyright />
-          </Box>
-        </Container>
+                </div>
+              )}
+            </div>
+            <Voice />
+            <Box mt={8}>
+              <Copyright />
+            </Box>
+          </Container>
+        </div>
       )}
     </div>
   );

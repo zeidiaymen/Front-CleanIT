@@ -7,7 +7,7 @@ export default function about() {
   return (
     <section
       className="u-clearfix u-section-1 "
-      Style="width:60%;margin-left:9%; border-bottom : dashed 4px grey ; border-top : dashed 4px grey; border-left : dashed 4px grey; "
+      Style="width:60%;margin-left:18%; "
       id="sec-00b2"
     >
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -21,7 +21,7 @@ export default function about() {
                     data-image-width="1500"
                     data-image-height="1900"
                     Style="height:auto ;"
-                    src="https://www.kindpng.com/picc/m/214-2140952_big-full-lady-cleaning-lady-hd-png-download.png"
+                    src="https://image.freepik.com/vecteurs-libre/test-nouveaux-gadgets-personnage-plat-feminin-appuyant-ecran-du-smartphone-femme-choisissant-tablette-pave-tactile-ecran-tactile-appareil-electronique_335657-2656.jpg"
                   />
                 </div>
               </div>
