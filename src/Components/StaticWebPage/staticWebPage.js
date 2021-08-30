@@ -253,7 +253,7 @@ const Navbar = () => {
                 transition={{ duration: 2 }}
               >
                 <GridBt>
-                  <US />
+                  <US id="#about" />
                 </GridBt>
               </About>
             </center>

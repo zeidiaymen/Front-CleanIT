@@ -15,7 +15,7 @@ import NavAdm from "./Components/dashboard/navbar";
 import monAdmin from "./Components/dashboard/Espace Admin/adminService";
 import clmAdmin from "./Components/dashboard/Espace Admin/cadminClaim";
 import pmem from "./Components/dashboard/Espace Admin/members";
-
+import { Redirect } from "react-router";
 const Role = localStorage.getItem("role");
 function App() {
   return (
