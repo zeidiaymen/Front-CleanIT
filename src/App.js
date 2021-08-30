@@ -21,8 +21,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        
-        <Route  path="/home" component={NavbarStatic} />
+        <Route path="/home" component={NavbarStatic} />
+        <Route exact path="/" render={() => <Redirect to="/home" />} />
         <Route path="/Register" component={Register} />
         <Route path="/Signin" component={SignIn} />
         {Role === "user" && (
