@@ -11,7 +11,7 @@ const Monitoring = () => {
   const [json, setJson] = useState({ us: [] });
   useEffect(async () => {
     const data = await fetch(
-      "https://appcleanit.herokuapp.com/mont/get/" + user
+      "http://localhost:3000/mont/get/" + user
     );
     const p = await data.json();
     console.log(p);
@@ -19,8 +19,8 @@ const Monitoring = () => {
     console.log(json.us);
   }, []);
   const del = async (id) => {
-    await axios.delete("https://appcleanit.herokuapp.com/mont/" + id);
-    await axios.delete("https://appcleanit.herokuapp.com/Commands/" + id);
+    await axios.delete("http://localhost:3000/mont/" + id);
+    await axios.delete("http://localhost:3000/Commands/" + id);
     History.go(0);
   };
   return (

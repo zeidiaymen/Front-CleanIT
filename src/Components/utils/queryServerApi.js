@@ -19,7 +19,7 @@ export async function queryServerApi(
     //Create our config, with the method as the method passed and the new endpoint
     let config = {
       method,
-      url: `https://appcleanit.herokuapp.com/${endpoint}`,
+      url: `http://localhost:3000/${endpoint}`,
     };
     if (body) {
       // If we have a body and the method is GET, the config is the following

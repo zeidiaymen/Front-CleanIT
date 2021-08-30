@@ -12,7 +12,7 @@ export default function Claim() {
   const [claims, setClaims] = useState({ us: [] });
   useEffect(async () => {
     const data = await fetch(
-      "https://appcleanit.herokuapp.com/claim/get/" + Client_id
+      "http://localhost:3000/claim/get/" + Client_id
     );
     var x = await data.json();
     setClaims({ us: x });

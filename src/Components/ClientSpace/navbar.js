@@ -31,7 +31,7 @@ export default function MenuAppBar() {
   const id = localStorage.getItem("id");
 
   useEffect(async () => {
-    const data = await fetch("https://appcleanit.herokuapp.com/user/" + id);
+    const data = await fetch("http://localhost:3000/user/" + id);
     const p = await data.json();
     setUser(p);
   }, []);
@@ -49,7 +49,7 @@ export default function MenuAppBar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const imgs = "https://appcleanit.herokuapp.com/user/Uploads/" + user.img;
+  const imgs = "http://localhost:3000/user/Uploads/" + user.img;
 
   return (
     <div className={classes.root}>

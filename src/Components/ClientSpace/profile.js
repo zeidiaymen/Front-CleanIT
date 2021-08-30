@@ -21,7 +21,7 @@ export default function Profile() {
     }
   };
   useEffect(async () => {
-    const data = await fetch("https://appcleanit.herokuapp.com/user/" + id);
+    const data = await fetch("http://localhost:3000/user/" + id);
     const p = await data.json();
     setUser(p);
   }, []);
@@ -57,7 +57,7 @@ export default function Profile() {
     }
     History.go(0);
   };
-  const imgs = "https://appcleanit.herokuapp.com/user/Uploads/" + user.img;
+  const imgs = "http://localhost:3000/user/Uploads/" + user.img;
   return (
     <Container Style="min-height : 650px">
       <br />

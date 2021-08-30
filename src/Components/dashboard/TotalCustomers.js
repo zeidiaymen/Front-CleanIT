@@ -14,7 +14,7 @@ const TotalCustomers = () => {
   const [tot, setTot] = useState(0);
   useEffect(async () => {
     var totale = 0;
-    const data = await fetch("https://appcleanit.herokuapp.com/user/all");
+    const data = await fetch("http://localhost:3000/user/all");
     const p = await data.json();
 
     for (let i = 1; p.length > i; i++) {

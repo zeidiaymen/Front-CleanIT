@@ -26,7 +26,7 @@ const TrafficByDevice = () => {
     var desktop = 0;
     var tablet = 0;
     var totale = 0;
-    const data = await fetch("https://appcleanit.herokuapp.com/device/get");
+    const data = await fetch("http://localhost:3000/device/get");
     const p = await data.json();
     for (let i = 0; i < p.length; i++) {
       totale += 1;

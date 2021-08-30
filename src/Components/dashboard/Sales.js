@@ -19,7 +19,7 @@ const Sales = () => {
   const [nov, setJeudi] = useState(0);
 
   useEffect(async () => {
-    const data = await fetch("https://appcleanit.herokuapp.com/serv/get");
+    const data = await fetch("http://localhost:3000/serv/get");
     const p = await data.json();
     var a = 0;
     var b = 0;

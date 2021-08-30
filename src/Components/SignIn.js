@@ -140,7 +140,7 @@ function SignIn() {
     var name = "";
     var ids = "";
     await axios
-      .get("https://appcleanit.herokuapp.com/user/" + id, {
+      .get("http://localhost:3000/user/" + id, {
         headers: { Authorization: `Bearer ${Token}` },
       })
       .then((data) => {
