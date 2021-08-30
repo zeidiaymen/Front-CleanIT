@@ -45,10 +45,10 @@ const TrafficByDevice = () => {
     setDes(desktop);
     setTab(tablet);
   });
-  const mb = (mob / tot) * 100;
-  const ds = (des / tot) * 100;
+  const mb = Math.round((mob / tot) * 100);
+  const ds = Math.round((des / tot) * 100);
 
-  const tb = (tab / tot) * 100;
+  const tb = Math.round((tab / tot) * 100);
 
   const data = {
     datasets: [
