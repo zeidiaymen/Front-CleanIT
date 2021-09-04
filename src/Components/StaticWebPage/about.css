@@ -1,6 +1,20 @@
 .u-section-1 .u-sheet-1 {
   min-height: 679px;
 }
+.ee {
+  margin-left: 16%;
+}
+@media (max-width: 880px) {
+  .bb {
+    width: 300px !important;
+    height: auto !important ;
+    margin: 0 !important;
+  }
+  .ee {
+    width: 30%;
+    margin-left: -20px;
+  }
+}
 
 .u-section-1 .u-layout-wrap-1 {
   margin: 60px auto 60px 0;
@@ -132,7 +146,7 @@
     width: 296px;
     height: 306px;
     margin-top: -253px;
-    margin-left: 111px;
+    margin-left: 25%;
   }
 
   .u-section-1 .u-layout-cell-2 {

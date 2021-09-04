@@ -1,0 +1,18 @@
+.pt {
+  width: 500px;
+}
+.kaka {
+    width : 60%;min-height : 400px;
+}
+@media (max-width: 880px) {
+  .pt {
+    width: 420px;
+  }
+  .ss {
+    width: auto;
+  }
+  .kaka {
+      height: auto;
+      width: 100%;
+  }
+}

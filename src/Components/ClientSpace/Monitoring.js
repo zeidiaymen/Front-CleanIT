@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { queryServerApi } from "../utils/queryServerApi";
-
+import "./serv.css";
 const Monitoring = () => {
   var x = "";
   History = useHistory();
@@ -29,7 +29,7 @@ const Monitoring = () => {
       <h1 Style="letter-spacing : 3px">Status of your order</h1>
       <br />
       <br />
-      <div Style="width : 60%;min-height : 400px;">
+      <div className="kaka">
         <table class="table">
           <thead>
             <tr>
@@ -76,6 +76,7 @@ const Monitoring = () => {
                       {console.log(data.state)}
                     </td>
                     <i
+                      Style="width:25px"
                       class="fa fa-trash"
                       aria-hidden="true"
                       onClick={() => {

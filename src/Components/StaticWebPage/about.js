@@ -6,8 +6,8 @@ import "./about.css";
 export default function about() {
   return (
     <section
-      className="u-clearfix u-section-1 "
-      Style="width:60%;margin-left:18%; "
+      className="u-clearfix u-section-1 ee"
+      Style="width:60%; "
       id="sec-00b2"
     >
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -17,9 +17,7 @@ export default function about() {
               <div class="u-container-style u-expand-resize u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
                 <div class="u-container-layout u-container-layout-1">
                   <img
-                    class="u-image u-image-1"
-                    data-image-width="1500"
-                    data-image-height="1900"
+                    className="u-image u-image-1 bb"
                     Style="height:auto ;"
                     src="https://image.freepik.com/vecteurs-libre/test-nouveaux-gadgets-personnage-plat-feminin-appuyant-ecran-du-smartphone-femme-choisissant-tablette-pave-tactile-ecran-tactile-appareil-electronique_335657-2656.jpg"
                   />

@@ -17,7 +17,8 @@ export const Nav = styled.nav`
   @media screen and (max-width: 960px) {
     transition: 0.8s all ease;
     width: 100%;
-    margin-right: 20px;
+    max-width: 600px;
+    margin-right: 100%;
   }
 `;
 export const Services = styled(motion.div)`
@@ -36,6 +37,9 @@ export const Center = styled.div`
 
 export const About = styled(motion.div)`
   margin-top: 100px;
+  @media screen and (max-width: 960px) {
+    margin-right: 50%;
+  }
 `;
 export const GridBt = styled.div`
   display: grid;
@@ -66,8 +70,9 @@ export const NavContainer = styled.div`
   padding: 0 24px;
   max-width: 1100px;
 
-  @media screen and (max-width: 320) {
-    padding: 0 0 px;
+  @media screen and (max-width: 920) {
+    padding: 0 0 0 0 px;
+    margin-left: 0px;
   }
 `;
 export const ImgCaroussel = styled.img`
@@ -99,6 +104,8 @@ export const NavLogo = styled.a`
   text-decoration: none;
   @media screen and (max-width: 960px) {
     margin-left: 0px;
+    font-size: 13px;
+    padding: 0 0 0 0 px;
   }
 `;
 
@@ -125,11 +132,18 @@ export const NavMenu = styled.div`
 
   @media screen and (max-width: 720px) and {
     margin-right: 100%;
+    width: 480px;
+    padding: 0 0 0 0 px;
   }
 `;
 
 export const NavItem = styled.li`
   height: 80px;
+  @media screen and (max-width: 720px) and {
+    margin-right: 100%;
+    width: 480px;
+    padding: 0 0 0 0 px;
+  }
 `;
 
 export const NavLinks = styled.a`
@@ -147,6 +161,9 @@ export const NavLinks = styled.a`
   }
   @media screen and (max-width: 960px) {
     font-size: 15px;
+    padding: 0 0 0 0 px;
+
     width: 100%;
+    font-size: 10px;
   }
 `;

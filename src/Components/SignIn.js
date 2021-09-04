@@ -68,6 +68,7 @@ function SignIn() {
   const [colorChange, setColorchange] = useState(false);
   const test = localStorage.getItem("IA");
   const [bool, setBool] = useState(true);
+  const [mob, setMob] = useState(false);
 
   useEffect(async () => {
     await setTimeout(async () => {
@@ -202,38 +203,71 @@ function SignIn() {
     <div>
       {bool ? (
         <center>
-          <img Style="width:40%;height : 40% ; margin-top : 150px" src={img} />
+          <img className="pre" src={img} />
         </center>
       ) : (
         <div>
-          <Nav
-            id="nav"
-            className={colorChange ? "navbar colorChange" : "navbar"}
-          >
-            <NavContainer>
-              <NavLogo href="/home">CleanIT</NavLogo>
-              <MobileIcon></MobileIcon>
-              <NavMenu>
-                <NavItem>
-                  <NavLinks href="#serv">Services</NavLinks>
-                </NavItem>
-                <NavItem>
-                  <NavLinks href="#about">About Us</NavLinks>
-                </NavItem>
-                <NavItem>
-                  <NavLinks href="#Team">Team</NavLinks>
-                </NavItem>
-                <NavItem>
-                  <NavLinks href="#footer">Contact</NavLinks>
-                </NavItem>
-                <NavItem>
-                  <NavLinks href="SignIn">
-                    <i className="fa fa-user" aria-hidden="true"></i>
-                  </NavLinks>
-                </NavItem>
-              </NavMenu>
-            </NavContainer>
-          </Nav>
+          {isBrowser ? (
+            <Nav
+              id="nav"
+              className={colorChange ? "navbar colorChange" : "navbar"}
+            >
+              <NavContainer>
+                <NavLogo href="/home">
+                  Clean
+                  <span
+                    className="it"
+                    Style="color:crimson;letter-spacing:0px;font-size:30px"
+                  >
+                    IT
+                  </span>
+                </NavLogo>
+                <MobileIcon></MobileIcon>
+                <NavMenu>
+                  <NavItem>
+                    <NavLinks href="#serv">Services</NavLinks>
+                  </NavItem>
+                  <NavItem>
+                    <NavLinks href="#about">About Us</NavLinks>
+                  </NavItem>
+                  <NavItem>
+                    <NavLinks href="#Team">Team</NavLinks>
+                  </NavItem>
+                  <NavItem>
+                    <NavLinks href="#footer">Contact</NavLinks>
+                  </NavItem>
+                  <NavItem>
+                    <NavLinks href="SignIn">
+                      <i className="fa fa-user" aria-hidden="true"></i>
+                    </NavLinks>
+                  </NavItem>
+                </NavMenu>
+              </NavContainer>
+            </Nav>
+          ) : (
+            <div class="topnav">
+              <a href="/" class="active">
+                Clean <span Style="color:crimson">IT</span>
+              </a>
+              {mob ? (
+                <div id="myLinks">
+                  <a href="#serv">Services</a>
+                  <a href="#about">About Us</a>
+                  <a href="#footer">Contact</a>
+                  <a href="SignIn">Login</a>
+                </div>
+              ) : (
+                console.log("")
+              )}
+              <a
+                href="javascript:void(0);"
+                class="icon"
+                onClick={() => setMob(!mob)}
+              >
+                <i class="fa fa-bars"></i>
+              </a>
+            </div>
+          )}
           <Container component="main" maxWidth="xs">
             <CssBaseline />
             <div className={classes.paper}>
@@ -350,7 +384,7 @@ function SignIn() {
                 </div>
               )}
             </div>
-        
+
             <Box mt={8}>
               <Copyright />
             </Box>

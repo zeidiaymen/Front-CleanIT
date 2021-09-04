@@ -27,13 +27,11 @@
 
   /* Set a specific height */
   min-height: 500px;
-  z-index: 1;
+
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-
-  opacity: 1.6;
 
   background-size: cover;
 }
@@ -84,7 +82,11 @@
 .footer-distributed .footer-left {
   width: 40%;
 }
-
+.pre {
+  width: 40%;
+  height: 40%;
+  margin-top: 150px;
+}
 /* The company logo */
 
 .footer-distributed h3 {
@@ -109,11 +111,32 @@
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
+  margin-top: 2%;
 
   margin-left: 2%;
   margin-right: 2%;
 }
 @media (max-width: 880px) {
+  .pre {
+    width: 100%;
+    height: 100%;
+    margin-top: 50%;
+  }
+  #Doc {
+    background-attachment: scroll;
+
+    background-size: auto;
+  }
+  .hero {
+    background-size: cover;
+    margin: 0 0 0 0;
+  }
+  .input-group {
+    margin-left: 20% !important;
+  }
+  .it {
+    font-size: 13px !important;
+  }
   .hero {
     height: 600px;
     width: 100%;
@@ -127,15 +150,12 @@
     height: auto;
     border: none;
   }
-  .k{
-    grid-template-columns: 0em !important;
+  .k {
+    max-width: 300px;
+    margin-left: 27px;
   }
   .srv {
     width: 50px;
-  }
-  .Est {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -332,4 +352,45 @@
   100% {
     left: 80%;
   }
+}
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #333;
+
+  color: white;
 }

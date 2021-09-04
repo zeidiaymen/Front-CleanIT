@@ -6,8 +6,7 @@ import TasksProgress from "./TasksProgress";
 import TotalCustomers from "./TotalCustomers";
 import TotalProfit from "./TotalProfit";
 import TrafficByDevice from "./TrafficByDevice";
-import img from "../utils/1.gif"
-
+import img from "../utils/1.gif";
 
 const Dashboard = () => {
   const [bool, setBool] = useState(true);
@@ -20,9 +19,9 @@ const Dashboard = () => {
   return (
     <>
       {bool ? (
-         <center>
-         <img Style="width:40%;height : 40% ; margin-top : 150px" src={img} />
-       </center>
+        <center>
+          <img className="pre" src={img} />
+        </center>
       ) : (
         <div>
           <Helmet>

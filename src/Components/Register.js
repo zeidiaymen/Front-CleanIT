@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { isBrowser } from "react-device-detect";
+
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -62,6 +64,8 @@ export default function Register() {
   const History = useHistory();
   const classes = useStyles();
   const [colorChange, setColorchange] = useState(false);
+  const [mob, setMob] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -89,31 +93,64 @@ export default function Register() {
 
   return (
     <div>
-      <Nav id="nav" className={colorChange ? "navbar colorChange" : "navbar"}>
-        <NavContainer>
-          <NavLogo href="/home">CleanIT</NavLogo>
-          <MobileIcon></MobileIcon>
-          <NavMenu>
-            <NavItem>
-              <NavLinks href="#serv">Services</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks href="#about">About Us</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks href="#Team">Team</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks href="#footer">Contact</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks href="SignIn">
-                <i className="fa fa-user" aria-hidden="true"></i>
-              </NavLinks>
-            </NavItem>
-          </NavMenu>
-        </NavContainer>
-      </Nav>
+      {isBrowser ? (
+        <Nav id="nav" className={colorChange ? "navbar colorChange" : "navbar"}>
+          <NavContainer>
+            <NavLogo href="/home">
+              Clean
+              <span
+                className="it"
+                Style="color:crimson;letter-spacing:0px;font-size:30px"
+              >
+                IT
+              </span>
+            </NavLogo>
+            <MobileIcon></MobileIcon>
+            <NavMenu>
+              <NavItem>
+                <NavLinks href="#serv">Services</NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks href="#about">About Us</NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks href="#Team">Team</NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks href="#footer">Contact</NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks href="SignIn">
+                  <i className="fa fa-user" aria-hidden="true"></i>
+                </NavLinks>
+              </NavItem>
+            </NavMenu>
+          </NavContainer>
+        </Nav>
+      ) : (
+        <div class="topnav">
+          <a href="/" class="active">
+            Clean <span Style="color:crimson">IT</span>
+          </a>
+          {mob ? (
+            <div id="myLinks">
+              <a href="#serv">Services</a>
+              <a href="#about">About Us</a>
+              <a href="#footer">Contact</a>
+              <a href="SignIn">Login</a>
+            </div>
+          ) : (
+            console.log("")
+          )}
+          <a
+            href="javascript:void(0);"
+            class="icon"
+            onClick={() => setMob(!mob)}
+          >
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+      )}
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
