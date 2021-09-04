@@ -126,7 +126,7 @@ const Navbar = () => {
     <Fragment>
       {bool == true ? (
         <center>
-          <img className="pre"  src={img} />
+          <img className="pre" src={img} />
         </center>
       ) : (
         <div>
@@ -395,7 +395,7 @@ const Navbar = () => {
                 transition={{ duration: 2 }}
               >
                 <GridBt>
-                  <US id="#about" />
+                  <US id="about" />
                 </GridBt>
               </About>
             </center>

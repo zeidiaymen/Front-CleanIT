@@ -8,9 +8,9 @@ export default function about() {
     <section
       className="u-clearfix u-section-1 ee"
       Style="width:60%; "
-      id="sec-00b2"
+      id="sec-00b2 "
     >
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1" id="about">
         <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-row">
